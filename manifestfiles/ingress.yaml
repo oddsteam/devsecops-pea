@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pea-devsecops
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: helm-devsecops.amp-dev.cloud
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: pea-devsecops
+            port:
+              number: 80

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pea-devsecops
+  labels:
+    app: pea-devsecops
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pea-devsecops
+  template:
+    metadata:
+      labels:
+        app: pea-devsecops
+    spec:
+      containers:
+      - name: pea-devsecops
+        image: nginx:alpine
+        ports:
+        - name: http-port
+          containerPort: 80

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: pea-devsecops
+  name: pea-devsecops
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: http-port
+  selector:
+    app: pea-devsecops
+status:
+  loadBalancer: {}
