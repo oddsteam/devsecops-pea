@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Config
+clusters:
+- name: "k8s-playground"
+  cluster:
+    server: "https://k8s-ohm.pea.co.th/k8s/clusters/c-m-r49wtbnw"
+
+users:
+- name: "k8s-playground"
+  user:
+    token: "kubeconfig-u-96ddsxzp2g:fvf9zbj9rc7759nksdkpsjgjfkjgfvxwpxwjzmn7qtwm4pzc42nff2"
+
+
+contexts:
+- name: "k8s-playground"
+  context:
+    user: "k8s-playground"
+    cluster: "k8s-playground"
+
+current-context: "k8s-playground"
